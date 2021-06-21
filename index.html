@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scaleX(1);
+      }
+      50% {
+        transform: scale3d(0.95, 0.95, 0.95);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+    .pulse {
+      animation: pulse;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes shake2 {
+      0% {
+        transform: translateX(80px);
+      }
+      50% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(80px);
+      }
+    }
+    .shake2 {
+      animation: shake2 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+    @keyframes shake {
+      10%,
+      90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      20%,
+      80% {
+        transform: translate3d(2px, 0, 0);
+      }
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+      40%,
+      60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+    .shake {
+      animation: shake 3.1s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+    @keyframes showZoomIn {
+      from {
+        transform: scale3d(0.5, 0.5, 0.5);
+      }
+      to {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    .showZoomIn {
+      animation: showZoomIn;
+      animation-duration: 1.5s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+    @keyframes bottle {
+      0% {
+        transform: rotateZ(0);
+      }
+      10% {
+        transform: rotateZ(-3deg);
+      }
+      20% {
+        transform: rotateZ(3deg);
+      }
+      30% {
+        transform: rotateZ(-3deg);
+      }
+      40% {
+        transform: rotateZ(3deg);
+      }
+      50% {
+        transform: rotateZ(-3deg);
+      }
+      60% {
+        transform: rotateZ(0);
+      }
+      100% {
+        transform: rotateZ(0);
+      }
+    }
+    .bottle {
+      animation: bottle 3s ease-in-out infinite;
+    }
+    .swipe_up {
+      animation: swipeup 0.75s ease infinite;
+    }
+    @keyframes swipeup {
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    .fadeInZoom {
+      animation-delay: 1s;
+      animation: fadeInZoom 1;
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+    @keyframes fadeInZoom {
+      0% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale3d(0.9, 0.85, 0.9) translate3d(0, 20px, 0);
+        opacity: 0;
+      }
+      to {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+    .popin {
+      animation-delay: 2s;
+      animation: popin 3s linear 1;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+    @keyframes popin {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      33% {
+        transform: scale(0.33);
+        opacity: 0.3;
+      }
+      67% {
+        transform: scale(0.67);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes fadeInBottom {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -80px, 0);
+      }
+    }
+    .fadeInBottom {
+      animation-name: fadeInBottom;
+      animation-duration: 0.7s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+    .first {
+      width: 50px;
+      height: 50px;
+      left: 30px;
+      position: relative;
+    }
+    .second {
+      width: 50px;
+      height: 50px;
+      left: 300px;
+      position: relative;
+    }
+    .one {
+      top: 30px;
+      position: absolute;
+    }
+    .two {
+      top: 150px;
+      position: absolute;
+    }
+    .three {
+      top: 250px;
+      position: absolute;
+    }
+    .four {
+      top: 450px;
+      position: absolute;
+    }
+    .five {
+      top: 650px;
+      position: absolute;
+    }
+    .six {
+      top: 0px;
+      position: absolute;
+    }
+    .seven {
+      top: 300px;
+      position: absolute;
+    }
+    .eight {
+      top: 500px;
+      position: absolute;
+    }
+    .hand {
+      top: -20px;
+      position: absolute;
+    }
+  </style>
+  <body>
+    <div class="first">
+      <div class="one pulse">
+        <img
+          src="https://ms.purplepatch.online/drag-and-drop/bkash-june-21/mastercopy.png"
+          alt=""
+        />
+      </div>
+      <div class="two shake">
+        <img
+          src="https://ms.purplepatch.online/drag-and-drop/bkash-june-21/visa.png"
+          alt=""
+        />
+        <div class="hand">
+          <img
+            src="https://ms.purplepatch.online/drag-and-drop/bkash-june-21/hand.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="three showZoomIn">
+        <img
+          src="https://ms.purplepatch.online/animation/vivo-may-21/images/p3.png"
+          alt=""
+        />
+      </div>
+      <div class="four bottle">
+        <img
+          src="https://ms.purplepatch.online/animation/vivo-may-21/images/p3.png"
+          alt=""
+        />
+      </div>
+      <div class="five swipe_up">
+        <img
+          src="https://ms.purplepatch.online/slideanim/emami/he-10-25/01/swipeup.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="second">
+      <div class="six fadeInZoom">
+        <img
+          src="https://ms.purplepatch.online/slideanim/emami/he-10-25/01/model.png"
+          alt=""
+        />
+      </div>
+      <div class="seven popin">
+        <img
+          src="https://ms.purplepatch.online/slideanim/emami/he-10-25/02/product.png"
+          alt=""
+        />
+      </div>
+      <div class="eight fadeInBottom">
+        <img
+          src="https://ms.purplepatch.online/ramadan/gph-21/assets/left.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
